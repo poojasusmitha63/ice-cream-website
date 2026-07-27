@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Creamy Dreams & Frosty Delights</title>
+<style>
+body{font-family:Arial;margin:0;background:#fff6eb;}
+header{background:#f39c12;color:white;padding:20px;text-align:center;}
+nav{background:#333;padding:10px;text-align:center;}
+nav button{background:#e67e22;border:none;color:white;padding:8px 15px;margin:5px;cursor:pointer;border-radius:20px;}
+section{display:none;padding:30px;text-align:center;}
+.menu{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
+.card{background:white;width:200px;padding:15px;border-radius:15px;box-shadow:0 5px 12px rgba(0,0,0,0.15);}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:10px;}
+.price{color:#e74c3c;font-weight:bold;}
+button.add{background:#e67e22;border:none;color:white;padding:8px 15px;border-radius:20px;margin-top:10px;cursor:pointer;}
+.cart{background:white;max-width:400px;margin:30px auto;padding:20px;border-radius:10px;box-shadow:0 5px 12px rgba(0,0,0,0.15);}
+.login-box{width:300px;margin:auto;background:white;padding:20px;border-radius:10px;}
+input{width:100%;padding:8px;margin:10px 0;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Creamy Dreams & Frosty Delights</h1>
+<p>Fresh Drinks & Desserts</p>
+</header>
+
+<nav>
+<button onclick="showPage('login')">Login</button>
+<button onclick="showPage('register')">Register</button>
+<button onclick="showPage('icecream')">Ice Cream</button>
+<button onclick="showPage('drinks')">Soft Drinks</button>
+<button onclick="showPage('juices')">Juices</button>
+<button onclick="showPage('salads')">Salads</button>
+<button onclick="showPage('payment')">Payment</button>
+</nav>
+
+<section id="login">
+<div class="login-box">
+<h2>Login</h2>
+<input type="text" placeholder="Username">
+<input type="password" placeholder="Password">
+<button onclick="showPage('icecream')">Login</button>
+</div>
+</section>
+
+<section id="register">
+<div class="login-box">
+<h2>Register</h2>
+<input type="text" placeholder="First Name">
+<input type="text" placeholder="Last Name">
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+<button onclick="showPage('login')">Submit</button>
+</div>
+</section>
+
+<section id="icecream">
+<h2>Ice Cream Menu</h2>
+<div class="menu">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb">
+<h3>Chocolate Ice Cream</h3>
+<p class="price">₹40</p>
+<button class="add" onclick="addToCart('Chocolate Ice Cream',40)">Add</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625">
+<h3>Strawberry Ice Cream</h3>
+<p class="price">₹35</p>
+<button class="add" onclick="addToCart('Strawberry Ice Cream',35)">Add</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371">
+<h3>Vanilla Ice Cream</h3>
+<p class="price">₹25</p>
+<button class="add" onclick="addToCart('Vanilla Ice Cream',25)">Add</button>
+</div>
+</div>
+</section>
+
+<section id="drinks">
+<h2>Soft Drinks</h2>
+<div class="menu">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581636625402-29b2a704ef13">
+<h3>Pepsi</h3>
+<p class="price">₹40</p>
+<button class="add" onclick="addToCart('Pepsi',40)">Add</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505">
+<h3>Coca Cola</h3>
+<p class="price">₹40</p>
+<button class="add" onclick="addToCart('Coca Cola',40)">Add</button>
+</div>
+</div>
+</section>
+
+<section id="juices">
+<h2>Fresh Juices</h2>
+<div class="menu">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba">
+<h3>Orange Juice</h3>
+<p class="price">₹50</p>
+<button class="add" onclick="addToCart('Orange Juice',50)">Add</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b">
+<h3>Mango Juice</h3>
+<p class="price">₹60</p>
+<button class="add" onclick="addToCart('Mango Juice',60)">Add</button>
+</div>
+</div>
+</section>
+
+<section id="salads">
+<h2>Healthy Salads</h2>
+<div class="menu">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe">
+<h3>Veg Salad</h3>
+<p class="price">₹70</p>
+<button class="add" onclick="addToCart('Veg Salad',70)">Add</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994">
+<h3>Fruit Salad</h3>
+<p class="price">₹80</p>
+<button class="add" onclick="addToCart('Fruit Salad',80)">Add</button>
+</div>
+</div>
+</section>
+
+<section id="payment">
+<h2>Payment Options</h2>
+<div class="cart">
+<ul style="list-style:none;font-size:18px;padding:0">
+<li>💳 UPI</li>
+<li>🏦 Net Banking</li>
+<li>💳 Debit / Credit Card</li>
+<li>📦 Cash on Delivery</li>
+</ul>
+</div>
+</section>
+
+<div class="cart">
+<h2>🛒 Cart</h2>
+<ul id="cartItems"></ul>
+<h3>Total: ₹<span id="total">0</span></h3>
+</div>
+
+<script>
+function showPage(page){
+document.querySelectorAll("section").forEach(s=>s.style.display="none");
+document.getElementById(page).style.display="block";
+}
+showPage("login");
+let total=0;
+function addToCart(item,price){
+const li=document.createElement("li");
+li.textContent=item+" - ₹"+price;
+document.getElementById("cartItems").appendChild(li);
+total+=price;
+document.getElementById("total").innerText=total;
+}
+</script>
+
+</body>
+</html>
